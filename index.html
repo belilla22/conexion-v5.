@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CONEXIÓN</title>
+<style>
+:root{
+  --bg:#100c2b; --bg2:#1a1640; --card:#211c48; --line:#ffffff18;
+  --pink:#ff2e83; --orange:#ff9a3d; --cyan:#22c8df; --green:#2bd18a; --purple:#7656ef;
+  --text:#fff; --muted:#bcb9d0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+button{font:inherit;cursor:pointer}
+.app{min-height:100vh;background:
+ radial-gradient(circle at 15% 5%,#2a1c54 0,transparent 27%),
+ radial-gradient(circle at 90% 40%,#17143b 0,transparent 35%),
+ linear-gradient(180deg,#100c2b,#1a1640 70%,#100c2b)}
+header{position:sticky;top:0;z-index:20;height:82px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;background:#0c0a22f0;border-bottom:1px solid #ffffff0c;backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:13px;font-size:30px;font-weight:900;letter-spacing:-1px}
+.logo{width:54px;height:54px;border-radius:17px;display:grid;place-items:center;font-size:34px;color:#fff;background:linear-gradient(135deg,#ff3d7e,#ff8d42 35%,#27d38c 58%,#25c6df 77%,#7655ed);box-shadow:0 0 26px #ff3d7e45}
+.user{display:flex;align-items:center;gap:10px;font-size:21px}.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,#d74fa8,#7656ef)}
+main{max-width:980px;margin:auto;padding:34px 24px 80px}
+.hero{min-height:650px;display:flex;flex-direction:column;justify-content:center;padding:45px 0}
+.hero h1{font-size:clamp(48px,8vw,76px);line-height:.98;letter-spacing:-3px;margin:0 0 25px;font-weight:900}
+.gradient{background:linear-gradient(90deg,#ff408b,#f8bd37,#24d190,#2bc8df,#7a60f0);-webkit-background-clip:text;color:transparent}
+.hero .redheart{color:#ff3e42;text-shadow:0 5px 0 #b72832;font-size:.82em;margin-left:12px}
+.hero .lead{font-size:24px;line-height:1.45;font-weight:800;max-width:760px;margin:0 0 25px}
+.hero .desc{font-size:20px;line-height:1.65;color:#c4c1d3;max-width:780px}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:64px;padding:0 30px;border:0;border-radius:18px;color:#fff;font-weight:900;font-size:21px;background:linear-gradient(90deg,#ff237d,#ff9840);box-shadow:0 14px 35px #ff2e8340}
+.secondary{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 28px;margin-left:8px;border:1px solid #ffffff20;border-radius:18px;color:#fff;background:#ffffff08;font-size:20px}
+.globeWrap{height:520px;display:grid;place-items:center;position:relative}
+.orbit{position:absolute;width:82%;max-width:620px;height:210px;border:5px solid #23c9e8a8;border-radius:50%;transform:rotate(8deg)}
+.orbit.two{border-color:#ff3b91aa;transform:rotate(-11deg)}
+.dot{position:absolute;width:22px;height:22px;border-radius:50%;box-shadow:0 0 20px currentColor}.d1{background:#ff3b91;color:#ff3b91;left:15%;top:27%}.d2{background:#24c8e4;color:#24c8e4;right:12%;top:30%}.d3{background:#2bd18a;color:#2bd18a;left:27%;bottom:15%}.d4{background:#ffbd38;color:#ffbd38;right:28%;bottom:9%}
+.globe{width:min(360px,72vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3b8fe7,#2d67cf 30%,#1c1650 73%);box-shadow:0 0 65px #3d68e755,inset -30px -25px 50px #0a0825;position:relative;display:grid;place-items:center}
+.globe:before{content:"";position:absolute;inset:18px;border:2px solid #ffffff20;border-radius:50%}
+.globe .heart{font-size:155px;color:#ff3e88;text-shadow:0 0 25px #ff3e8870}
+.section{padding:55px 0}.section h2{font-size:42px;margin:0 0 8px}.section .sub{font-size:18px;color:var(--muted);margin:0 0 28px}
+.categoryGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.category{min-height:220px;border:1px solid #ffffff14;border-radius:26px;background:#ffffff06;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 1px #ffffff08}
+.catIcon{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-size:48px;margin-bottom:18px}
+.category h3{font-size:23px;margin:0}
+.c1{background:#ff347d}.c2{background:#29b9e8}.c3{background:#2bd18a}.c4{background:#eb4e9d}.c5{background:#ffb42c}.c6{background:#7656ed}.c7{background:#ff8d35}.c8{background:#27c0d3}
+.profiles{display:grid;gap:28px}
+.profile{border:1px solid #ffffff17;border-radius:28px;overflow:hidden;background:#18143a;box-shadow:0 20px 45px #0003}
+.profileTop{height:510px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.p1{background:linear-gradient(135deg,#ff8656,#ffc63f)}.p2{background:linear-gradient(135deg,#ffc34b,#ef789a)}.p3{background:linear-gradient(135deg,#4ac8d9,#7459e9)}
+.profileTop .bigIcon{font-size:150px;filter:drop-shadow(0 12px 9px #0002)}
+.match{position:absolute;right:18px;top:18px;background:#2a2331;color:#fff;border-radius:999px;padding:12px 18px;font-weight:900;font-size:20px}.match b{color:#ff3d4d}
+.profileBody{padding:25px 28px 28px}.profileBody h3{font-size:36px;margin:0 0 4px}.meta{font-size:20px;color:#c3c0d2;margin-bottom:20px}.tags{display:flex;gap:10px;flex-wrap:wrap}.tag{padding:10px 16px;border-radius:999px;background:#2a254d;border:1px solid #ffffff0c;font-size:18px}.profileActions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.connect,.view{height:64px;border:0;border-radius:18px;font-size:22px;font-weight:900}.connect{color:#fff;background:linear-gradient(90deg,#ff2380,#ff9a3e)}.view{color:#fff;background:#2a254d}
+.moments{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.moment{min-height:260px;border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #ffffff14}.m1{background:linear-gradient(145deg,#ff3c80,#7656ee)}.m2{background:linear-gradient(145deg,#22c8df,#2b73d4)}.m3{background:linear-gradient(145deg,#ffb43c,#ee5b83)}.moment h3{margin:0;font-size:21px}.moment p{font-size:20px;line-height:1.4;margin:0}
+.premium{border:1px solid #ffffff18;border-radius:28px;padding:30px;background:linear-gradient(135deg,#211844,#25184a 50%,#172c58);display:flex;align-items:center;justify-content:space-between;gap:25px}.premium h2{font-size:36px;margin:0 0 8px}.premium .price{font-size:42px;font-weight:900}.premium ul{color:#c6c3d4;line-height:1.8;font-size:18px}.premium button{min-height:58px;border:0;border-radius:16px;padding:0 24px;font-weight:900;background:linear-gradient(90deg,#ff2f80,#ff9b3e);color:#fff;font-size:18px}
+.toast{position:fixed;inset:0;background:#070516cc;display:none;place-items:center;z-index:40;padding:20px}.toast.open{display:grid}.matchbox{width:min(560px,100%);text-align:center;border-radius:28px;padding:38px;background:linear-gradient(180deg,#281b52,#171334);border:1px solid #ffffff18;box-shadow:0 30px 90px #0008}.matchbox .heartbig{font-size:100px;color:#ff3e86}.matchbox h2{font-size:42px;margin:0 0 8px}.matchbox p{color:#c7c4d4;font-size:19px}
+@media(max-width:700px){header{height:72px;padding:0 14px}.brand{font-size:25px}.logo{width:48px;height:48px}.user span{display:none}main{padding:18px 16px 60px}.hero{padding:25px 0;min-height:0}.hero h1{font-size:50px}.hero .lead{font-size:20px}.hero .desc{font-size:17px}.cta,.secondary{width:100%;margin:8px 0 0}.globeWrap{height:360px}.orbit{width:95%;height:145px}.profileTop{height:360px}.profileTop .bigIcon{font-size:110px}.profileBody h3{font-size:30px}.meta{font-size:17px}.tag{font-size:15px;padding:9px 12px}.categoryGrid{gap:12px}.category{min-height:180px}.catIcon{width:74px;height:74px;font-size:38px}.category h3{font-size:19px}.moments{grid-template-columns:1fr}.premium{display:block}.premium button{width:100%}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="logo">♥</div>CONEXIÓN</div>
+  <div class="user"><span>Francis</span><div class="avatar">F</div></div>
+</header>
+<main>
+<section class="hero">
+  <h1><span class="gradient">Entre millones,</span><br>una sola<br>conexión.<span class="redheart">❤️</span></h1>
+  <p class="lead">Amor · Amistad · Viajes · Cultura · Personas de todo el mundo</p>
+  <p class="desc">Descubre personas compatibles, comparte lo que te apasiona y encuentra conexiones que pueden convertirse en algo especial.</p>
+  <div><button class="cta" onclick="document.getElementById('descubre').scrollIntoView()">✨ Empezar a descubrir</button><button class="secondary" onclick="document.getElementById('premium').scrollIntoView()">💎 Ver Premium</button></div>
+</section>
+
+<section class="globeWrap">
+  <div class="orbit"></div><div class="orbit two"></div>
+  <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><span class="dot d4"></span>
+  <div class="globe"><div class="heart">♥</div></div>
+</section>
+
+<section class="section">
+  <h2>Encuentra tu conexión por lo que amas</h2>
+  <p class="sub">Intereses que unen a personas de todo el mundo.</p>
+  <div class="categoryGrid">
+    <div class="category"><div class="catIcon c1">♥</div><h3>Amor</h3></div>
+    <div class="category"><div class="catIcon c2">👥</div><h3>Amistad</h3></div>
+    <div class="category"><div class="catIcon c3">✈️</div><h3>Viajes</h3></div>
+    <div class="category"><div class="catIcon c4">🎵</div><h3>Música</h3></div>
+    <div class="category"><div class="catIcon c5">💪</div><h3>Deportes</h3></div>
+    <div class="category"><div class="catIcon c6">🎮</div><h3>Juegos</h3></div>
+    <div class="category"><div class="catIcon c7">📸</div><h3>Cultura</h3></div>
+    <div class="category"><div class="catIcon c8">🐾</div><h3>Mascotas</h3></div>
+  </div>
+</section>
+
+<section class="section" id="descubre">
+  <h2>🌎 Descubre</h2><p class="sub">Personas compatibles de distintos lugares del mundo.</p>
+  <div class="profiles">
+    <article class="profile">
+      <div class="profileTop p1"><div class="bigIcon">✈️</div><div class="match">91% <b>❤️</b></div></div>
+      <div class="profileBody"><h3>Daniel, 30</h3><div class="meta">🇲🇽 México · 🌎 América</div><div class="tags"><span class="tag">🌎 Viajes</span><span class="tag">⚽ Deporte</span><span class="tag">🍳 Cocina</span></div><div class="profileActions"><button class="connect" onclick="openMatch('Daniel')">❤️ Conectar</button><button class="view">Ver</button></div></div>
+    </article>
+    <article class="profile">
+      <div class="profileTop p2"><div class="bigIcon">🎵</div><div class="match">89% <b>❤️</b></div></div>
+      <div class="profileBody"><h3>Mei, 26</h3><div class="meta">🇯🇵 Japón · 🌏 Asia</div><div class="tags"><span class="tag">🎵 Música</span><span class="tag">🎨 Cultura</span><span class="tag">📚 Libros</span></div><div class="profileActions"><button class="connect" onclick="openMatch('Mei')">❤️ Conectar</button><button class="view">Ver</button></div></div>
+    </article>
+    <article class="profile">
+      <div class="profileTop p3"><div class="bigIcon">📸</div><div class="match">88% <b>❤️</b></div></div>
+      <div class="profileBody"><h3>Sofía, 28</h3><div class="meta">🇪🇸 España · 🇪🇺 Europa</div><div class="tags"><span class="tag">📸 Cultura</span><span class="tag">🐾 Mascotas</span><span class="tag">✈️ Viajes</span></div><div class="profileActions"><button class="connect" onclick="openMatch('Sofía')">❤️ Conectar</button><button class="view">Ver</button></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>✨ Momentos</h2><p class="sub">Conoce a las personas por lo que comparten.</p>
+  <div class="moments">
+    <div class="moment m1"><h3>✨ Lucía 🇪🇸</h3><p>“Mi lugar favorito para desconectar del mundo 🌊”</p></div>
+    <div class="moment m2"><h3>✈️ Daniel 🇲🇽</h3><p>“Este año quiero conocer tres países nuevos.”</p></div>
+    <div class="moment m3"><h3>🎵 Mei 🇯🇵</h3><p>“¿Qué canción no puedes dejar de escuchar?”</p></div>
+  </div>
+</section>
+
+<section class="section" id="premium">
+  <div class="premium">
+    <div><h2>💎 CONEXIÓN Premium</h2><div class="price">4,99 € <small>/mes</small></div><ul><li>❤️ Ver quién te ha elegido</li><li>🌎 Explorar personas de todo el mundo</li><li>🔎 Filtros avanzados</li><li>💬 Traducción de mensajes</li><li>🚀 Perfil destacado</li></ul></div>
+    <button onclick="alert('Demo: aquí conectaremos el sistema de pagos.')">Activar Premium</button>
+  </div>
+</section>
+</main>
+</div>
+
+<div class="toast" id="toast"><div class="matchbox"><div class="heartbig">♥</div><h2>¡Habéis conectado!</h2><p id="matchText"></p><p>Entre millones, una sola conexión.</p><button class="cta" onclick="document.getElementById('toast').classList.remove('open')">💬 Empezar a hablar</button></div></div>
+<script>
+function openMatch(name){document.getElementById('matchText').textContent='Francis ❤️ '+name+' · habéis encontrado una conexión que merece la pena descubrir.';document.getElementById('toast').classList.add('open')}
+</script>
+</body>
+</html>
